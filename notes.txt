@@ -1,0 +1,26 @@
+CATEGORIZING TRACK BY MOOD:
+
+Parameters:
+- BPM (beats per min) - Deezer Track API (get id from Search API)
+- Genre - musixmatch API (has mass database in music.genres.get)
+- Key (major/minor) - Spotify API 
+- Valence (musical positiveness) - Spotify API 
+- Lyrics (tentative) - positive/neutral/negative keywords
+
+Ways to categorize: point system
+#1
+Total points: 0 ---- 25 ---- 50 ----- 75 ----- 100
+Tone category: melancholy - subdued - mellow - happy/upbeat - poppy (adjectives to be re-considered)
+
+#2
+2d system: x-axis = POSITIVE INDEX / y-index = NEGATIVE INDEX 
+each track has a Point in the 2d coordinate system (1st quadrant only) where (x, y) = (positive score, negative score)
+Divide into rectangular areas that correspond to a MOOD / TONE
+
+Weights of each parameter:
+
+
+
+
+
+
