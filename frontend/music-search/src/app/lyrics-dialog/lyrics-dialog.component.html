@@ -1,0 +1,21 @@
+<mdc-dialog>
+    <mdc-dialog-container>
+        <mdc-dialog-surface>
+            <mdc-dialog-title>Lyrics</mdc-dialog-title>
+            <mdc-dialog-content>
+                    <div *ngIf="notAvailable; else elseTemplate">
+                        <p>{{ lyrics }}</p>
+                    </div>
+                    <ng-template #elseTemplate>
+                        <p>{{ lyrics.body }}</p>
+                        <h6>{{ lyrics.copyright }}</h6>
+                        <h6>{{ lyrics.tracking }}</h6>
+                    </ng-template>
+            </mdc-dialog-content>
+        </mdc-dialog-surface>
+    </mdc-dialog-container>
+</mdc-dialog>
+
+
+
+
