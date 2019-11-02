@@ -1,7 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3aed2dd2-5f42-4fe6-aca0-17d5b49c0669" name="Default Changelist" comment="" />
+    <list default="true" id="3aed2dd2-5f42-4fe6-aca0-17d5b49c0669" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mod_track_mood/bean.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/mod_track_mood/bean.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mod_track_mood/parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/mod_track_mood/parser.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mod_track_mood/resources.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/mod_track_mood/resources.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mod_track_search/bean.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/mod_track_search/bean.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/run.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/music-search/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/music-search/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/music-search/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/music-search/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/music-search/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/music-search/src/app/app-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/music-search/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/music-search/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/music-search/src/styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/music-search/src/styles.scss" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,8 +28,13 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="ProjectId" id="1Ri1nz0BqyivU2uGHfXbOFoIZcn" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
@@ -120,5 +138,16 @@
       <updated>1569648439853</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

@@ -1,3 +1,4 @@
+import { GetAuthComponent } from './auth/get-auth/get-auth.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -20,7 +21,8 @@ import { LyricsDialogComponent } from './lyrics-dialog/lyrics-dialog.component';
   declarations: [
     AppComponent,
     GetTracksComponent,
-    LyricsDialogComponent
+    LyricsDialogComponent,
+    GetAuthComponent
   ],
   imports: [
     BrowserModule,

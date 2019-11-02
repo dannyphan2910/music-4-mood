@@ -24,6 +24,8 @@ def get_tracks(lyrics=''):
 
         response = (data, 200)
 
+    print(json.dumps(response[0], indent=4))
+
     return response
 
 

@@ -9,9 +9,22 @@ access_token = ''
 
 
 def set_access_token(token):
+    response = ({}, 404)
+
     global access_token
     if token is not None and token is not '':
         access_token = token
+
+    print(access_token)
+
+    if access_token is not '' and access_token == token:
+        result = {"success": True}
+        response = (result, 200)
+    else:
+        result = {"success": False}
+        response = (result, 400)
+
+    return response
 
 
 def get_mood_for_track(track):
@@ -41,7 +54,7 @@ def get_mood(track_name):
         return None
 
     get_analysis_base_url = 'https://api.spotify.com/v1/audio-features/'
-    get_analysis_url = get_analysis_base_url + track_id + '?access_token=' + access_token
+    get_analysis_url = get_analysis_base_url + track_id + '?' + access_token
 
     print(get_analysis_url)
 
@@ -61,7 +74,7 @@ def get_track_id(track_name):
     global access_token
 
     search_track_base_url = 'https://api.spotify.com/v1/search?'
-    search_track_url = search_track_base_url + 'q=track:' + urllib.parse.quote(track_name) + '&type=track' + '&access_token=' + access_token
+    search_track_url = search_track_base_url + 'q=track:' + urllib.parse.quote(track_name) + '&type=track&' + access_token
 
     request = requests.get(search_track_url)
     data_dict = request.json()

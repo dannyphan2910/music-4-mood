@@ -4,6 +4,7 @@ from flask_restful import Resource, Api
 from json import dumps
 from flask_jsonpify import jsonify
 
+from mod_track_mood.resources import *
 from mod_track_search.resources import *
 
 app = Flask(__name__)
@@ -18,6 +19,7 @@ def hello():
 
 
 api.add_resource(TrackList, '/get_tracks/<string:lyrics>')
+api.add_resource(Token, '/set_token')
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=4002, debug=True)
