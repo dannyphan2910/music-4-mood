@@ -11,10 +11,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { GetTracksComponent } from './get-tracks/get-tracks.component';
 
-import { MdcTextFieldModule, MdcButtonModule, MdcCardModule, MdcListModule, MdcDialogModule } from '@angular-mdc/web';
+import { MdcTextFieldModule, MdcButtonModule, MdcCardModule, MdcListModule, MdcDialogModule, MdcTypographyModule } from '@angular-mdc/web';
 
-import { NgxAudioPlayerModule } from 'ngx-audio-player';
-import { PlyrModule } from 'ngx-plyr';
 import { LyricsDialogComponent } from './lyrics-dialog/lyrics-dialog.component';
 
 @NgModule({
@@ -36,8 +34,7 @@ import { LyricsDialogComponent } from './lyrics-dialog/lyrics-dialog.component';
     MdcCardModule,
     MdcListModule,
     MdcDialogModule,
-    NgxAudioPlayerModule,
-    PlyrModule
+    MdcTypographyModule,
   ],
   entryComponents: [
     LyricsDialogComponent

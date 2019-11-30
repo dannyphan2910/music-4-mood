@@ -9,6 +9,7 @@ import { isString } from 'util';
 })
 export class LyricsDialogComponent implements OnInit {
   lyrics;
+  track;
   notAvailable = true;
 
   constructor(
@@ -16,6 +17,7 @@ export class LyricsDialogComponent implements OnInit {
     @Inject(MDC_DIALOG_DATA) private data
   ) {
     this.lyrics = data.lyrics;
+    this.track = data.track_info;
     if (!isString(this.lyrics)) {
       this.notAvailable = false;
     }

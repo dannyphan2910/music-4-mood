@@ -1,51 +1,66 @@
-<div class="get_input">
-  <div class="mid">
-    <div class="inner">
-        <h3 class="title">Enter part of the lyrics that you remember...</h3>
-        <form [formGroup] = "searchForm" (ngSubmit) = "onSubmit(searchForm.value)">
-          <mdc-form-field fluid>
-            <mdc-text-field formControlName = "lyrics" outlined class="lyrics_input"></mdc-text-field>
+<div class="container">
+  <div class="music_text_container">
+    <div mdcHeadline3 class="music_text"></div>
+  </div>
+  <div class="get_input">
+    <div class="mid">
+      <div class="inner">
+        <div mdcHeadline5 class="title">Enter any words for some song suggestions...</div>
+        <form [formGroup]="searchForm" (ngSubmit)="onSubmit(searchForm.value)">
+          <mdc-form-field fluid class="input">
+            <mdc-text-field formControlName="lyrics" outlined class="lyrics_input"></mdc-text-field>
           </mdc-form-field>
-    
+
           <div class="btn_submit">
             <button mdc-button type="submit">Submit</button>
-            <button mdc-button type="reset" (click)="reset()">Clear</button>    
+            <button mdc-button type="reset" (click)="reset()">Clear</button>
           </div>
         </form>
+      </div>
     </div>
   </div>
 </div>
-  
-<p *ngIf="userInput != null && tracks">{{ tracks.length }} result(s) for: {{ userInput }}</p>
 
-  <div class="result" *ngIf="tracks.length > 0">
-    <div class="card_result" *ngFor="let track of tracks">
-      <mdc-card class="card">
-          <mdc-card-primary-action>
-            <div class="row">
-                <div class="img">
-                    <img *ngIf="track.artwork != '' && track.artwork != null" [src]="track.artwork" alt="artwork for {{ track.title }}">
-                    <img *ngIf="track.artwork == '' || track.artwork == null" src="../../assets/placeholder_pic.png" alt="?">
-                </div>
-                
-                <div class="music_info">
-                    <h2 mdcHeadline5>{{ track.title }}</h2>
-                    <h3 mdcBody2>{{ track.artist }}</h3>
-                    <h4 mdcSubtitle1 *ngIf="track.genre">{{ track.genre }}</h4>
-                </div>
+
+<div class="divider"></div>
+
+
+<div class="result" *ngIf="tracks.length > 0">
+  <div mdcHeadline5 class="result_text" *ngIf="userInput != null && tracks.length > 0">{{ tracks.length }} result(s)
+    for: <i>{{ userInput }}</i></div>
+  <div class="card_result" *ngFor="let track of tracks">
+    <mdc-card class="card">
+      <mdc-card-primary-action>
+        <div class="row_1">
+          <div class="col_1">
+            <div class="img">
+              <img *ngIf="track.artwork != '' && track.artwork != null" [src]="track.artwork"
+                alt="artwork for {{ track.title }}">
+              <img *ngIf="track.artwork == '' || track.artwork == null" src="../../assets/placeholder_pic.png" alt="?">
             </div>
 
-          </mdc-card-primary-action>
-          <mdc-card-actions>
-            <mdc-list-divider></mdc-list-divider>
-            <button (click)="displayLyrics(track)">View Lyrics</button>
-            <!-- <button mdc-button (click)="playPreview(track)">Preview</button> -->
-            <div class="audio" *ngIf="track.preview_url">
-              <mat-basic-audio-player [audioUrl]="track.preview_url" [title]="track.title" 
-              [displayTitle]="false" [displayVolumeControls]="true"></mat-basic-audio-player>
+            <div class="music_info">
+              <div mdcHeadline3>{{ track.title }}</div>
+              <div mdcHeadline5>{{ track.artist }}</div>
+              <div mdcHeadline6 *ngIf="track.genre">{{ track.genre }}</div>
             </div>
+          </div>
+          <div class="col_2">
 
-          </mdc-card-actions>
-      </mdc-card>
-    </div>
+          </div>
+        </div>
+
+      </mdc-card-primary-action>
+      <mdc-card-actions class="row_2">
+        <mdc-list-divider></mdc-list-divider>
+        <div *ngIf="track.preview_url" class="audio_player">
+          <audio controls>
+            <source [src]="track.preview_url" type="audio/mpeg">
+            Your browser does not support the audio element.
+          </audio>
+        </div>
+        <button mdc-button (click)="displayLyrics(track)">View Lyrics</button>
+      </mdc-card-actions>
+    </mdc-card>
   </div>
+</div>

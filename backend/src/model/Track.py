@@ -2,7 +2,7 @@ from model.TrackMood import TrackMood
 
 
 class Track:
-    def __init__(self, title, genre, artist, album, lyrics=None, artwork=None, preview_url=None, mood=None):
+    def __init__(self, title, artist, album, genre=None, lyrics=None, artwork=None, preview_url=None, mood=None):
         self.title = title
         self.genre = genre
         self.artist = artist

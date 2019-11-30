@@ -1,17 +1,18 @@
 .container {
-    margin: 0;
-    padding: 0;
     height: 100vh;
-    width: 100%;
+    width: 100vw;
     background-color: black;
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    text-align: center;
 }
 
 h2 {
-    margin: 0;
-    padding: 0;
+    margin: auto;
     color: #1DB954;
 }
 
 .spotify_logo {
-    height: 200px;
+    height: 300px;
 }
