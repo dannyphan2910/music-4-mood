@@ -67,9 +67,9 @@
 .divider {
     width: 100vw;
     height: 30px;
-    background: #FBD3E9;
-    background: -webkit-linear-gradient(to top, #fbd3e9, #e7a7c9); /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to top, #fbd3e9, #e7a7c9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: rgb(248, 229, 240);
+    background: -webkit-linear-gradient(to top, rgb(248, 229, 240), #e9b0ce); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, rgb(248, 229, 240), #e9b0ce); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 
@@ -81,20 +81,22 @@
         height: 80%;
 
         .col_1 {
-            width: 60%;
+            width: 70%;
+            float: left;
+
+            .img {
+                float: left;
+                margin-right: 20px;
+            }
 
             img {
-                float: left;
-                width: 200px;
-                height: 200px;
+                width: 250px;
+                height: 250px;
             }
     
             .music_info {
-                float: inherit;
-                display: flex;
-                flex-direction: column;
                 padding: 8px 16px;
-                height: inherit;
+                max-height: 10px;
     
                 div {
                     margin-top: 2%;
@@ -103,7 +105,26 @@
         }
 
         .col_2 {
-            width: 40%;
+            width: 30%;
+            float: right;
+            text-align: center;
+            display: flex;
+            padding-top: 7%;
+
+            .stress_icon {
+                width: 50%;
+                float: left;
+            }
+
+            .energy_icon {
+                width: 50%;
+                float: right;
+            }
+            
+            img {
+                width: 125px;
+                height: 125px;
+            }
         }
     }
 
@@ -111,7 +132,7 @@
         margin: 8px;
 
         .audio_player {
-            margin-right: 10px;
+            margin-left: 10px;
         }
     }
 }
@@ -129,6 +150,12 @@
     30% { content:"Music touches us emotionally, where words alone can’t ― Johnny Depp"; }
     60% { content:"I see my life in terms of music. ― Albert Einstein"; }
     100% { content:"Music can change the world because it can change people. ― Bono"; }
+}
+
+@media only screen and (max-width: 1026px) {
+    #hide_mobile {
+        display: none;
+    }
 }
 
 

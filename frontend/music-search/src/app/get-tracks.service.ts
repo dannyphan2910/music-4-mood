@@ -20,6 +20,35 @@ export class GetTracksService {
     );
   }
 
+  getToken() {
+    const params = ('grant_type=client_credentials');
+    const client_id = 'e443d660cb984da1aa88a1780cc5a5e1'; // Your client id
+    const client_secret = '35413573f7aa459295e818970ad2755d'; // Your secret
+    const encoded = btoa(client_id + ':' + client_secret);
+    const set_headers = {
+      'Authorization': 'Basic ' + encoded,
+      'Content-Type': 'application/x-www-form-urlencoded'
+    }
+    const proxy = 'https://cors-anywhere.herokuapp.com/';
+    const uurl = 'https://accounts.spotify.com/api/token';
+
+    return this.http.post(proxy + uurl, params, { headers: set_headers }).subscribe( data => {
+      const accessToken = 'access_token=' + data['access_token'];
+      const refreshToken = 'refresh_token=' + data['refresh_token'];
+      const token = accessToken + '&' + refreshToken
+      console.log(token);
+      this.setTokenBackend(token);
+    }); 
+  }
+
+  setTokenBackend(token) {
+    const url = 'http://0.0.0.0:4002/set_token';
+    const toSend = {
+      'token': token
+    };
+    return this.http.post(url, toSend).subscribe(result => console.log(result));
+  }
+
   private handleError(error: HttpErrorResponse) {
     if (error.error instanceof ErrorEvent) {
       // A client-side or network error occurred. Handle it accordingly.

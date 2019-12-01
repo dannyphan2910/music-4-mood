@@ -4,7 +4,6 @@ from flask_restful import Resource, Api
 from json import dumps
 from flask_jsonpify import jsonify
 
-from mod_track_mood.resources import *
 from mod_track_search.resources import *
 
 app = Flask(__name__)

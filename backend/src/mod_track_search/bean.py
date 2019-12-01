@@ -1,5 +1,7 @@
 import json
 import requests
+
+from mod_analyze_mood.mood_analyzer import analyzer
 from model.Track import Track, TrackMood
 import urllib
 import os
@@ -101,12 +103,20 @@ def get_mood_for_track(track, id):
         key = None
         valence = None
         bpm = None
+        danceability = None
+        energy = None
     else:
         key = mood_result[0]
         valence = mood_result[1]
         bpm = mood_result[2]
+        danceability = mood_result[3]
+        energy = mood_result[4]
 
-    track_mood = TrackMood(bpm=bpm, key=key, valence=valence)
+    track_mood = TrackMood(bpm=bpm, key=key, valence=valence, danceability=danceability, energy=energy)
+
+    analyze_mood = analyzer(track_mood)
+    if analyze_mood is not None:
+        track_mood.analyzer = analyze_mood
 
     track.mood = track_mood
     return track_mood
@@ -115,8 +125,6 @@ def get_mood_for_track(track, id):
 def get_mood(track_id):
     if access_token is None or access_token is '':
         return None
-
-    # track_id = get_track_id(track_name)
 
     if track_id is None or track_id is '':
         return None
@@ -134,8 +142,10 @@ def get_mood(track_id):
     key = data_dict['key']
     valence = data_dict['valence']
     bpm = data_dict['tempo']
+    danceability = data_dict['danceability']
+    energy = data_dict['energy']
 
-    return key, valence, bpm
+    return key, valence, bpm, danceability, energy
 
 
 # MUSICXMATCH API

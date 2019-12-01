@@ -26,11 +26,11 @@
 
 
 <div class="result" *ngIf="tracks.length > 0">
-  <div mdcHeadline5 class="result_text" *ngIf="userInput != null && tracks.length > 0">{{ tracks.length }} result(s)
+  <div mdcHeadline4 class="result_text" *ngIf="userInput != null && tracks.length > 0">{{ tracks.length }} result(s)
     for: <i>{{ userInput }}</i></div>
   <div class="card_result" *ngFor="let track of tracks">
     <mdc-card class="card">
-      <mdc-card-primary-action>
+      <mdc-card-primary-action (click)="displayAudioFeatures(track)">
         <div class="row_1">
           <div class="col_1">
             <div class="img">
@@ -40,26 +40,57 @@
             </div>
 
             <div class="music_info">
-              <div mdcHeadline3>{{ track.title }}</div>
-              <div mdcHeadline5>{{ track.artist }}</div>
+              <div mdcHeadline4>{{ track.title }}</div>
+              <div mdcHeadline5>{{ track.artist.length >= 50 ? track.artist.substring(0, 50) + "..." : track.artist }}
+              </div>
               <div mdcHeadline6 *ngIf="track.genre">{{ track.genre }}</div>
             </div>
           </div>
-          <div class="col_2">
+          <div class="col_2" id="hide_mobile">
+
+            <ng-container *ngIf="track.mood.analyzer; else elseTemplateContainer">
+
+              <div class="stress_icon">
+                <ng-container *ngIf="track.mood.analyzer.stress_counter == 'happy'; else elseTemplateStress">
+                  <img src="../../assets/icons/smiling.png" alt="happy">
+                </ng-container>
+                <ng-template #elseTemplateStress>
+                  <img src="../../assets/icons/sad.png" alt="sad">
+                </ng-template>
+              </div>
+
+              <div class="energy_icon">
+                <ng-container *ngIf="track.mood.analyzer.energy_counter == 'energetic'; else elseTemplateEnergy">
+                  <img src="../../assets/icons/lightning.png" alt="energetic">
+                </ng-container>
+                <ng-template #elseTemplateEnergy>
+                  <img src="../../assets/icons/lotus.png" alt="calm">
+                </ng-template>
+              </div>
+
+            </ng-container>
+            <ng-template #elseTemplateContainer>
+              <div class="na_icon">
+                <img src="../../assets/icons/question.png" alt="not available">
+                <div mdcHeadline6>the mood analyzer this not available for this song</div>
+              </div>
+            </ng-template>
 
           </div>
         </div>
 
+
+
       </mdc-card-primary-action>
-      <mdc-card-actions class="row_2">
+      <mdc-card-actions class="row_2" id="hide_mobile">
         <mdc-list-divider></mdc-list-divider>
+        <button mdc-button (click)="displayLyrics(track)">View Lyrics</button>
         <div *ngIf="track.preview_url" class="audio_player">
           <audio controls>
             <source [src]="track.preview_url" type="audio/mpeg">
             Your browser does not support the audio element.
           </audio>
         </div>
-        <button mdc-button (click)="displayLyrics(track)">View Lyrics</button>
       </mdc-card-actions>
     </mdc-card>
   </div>

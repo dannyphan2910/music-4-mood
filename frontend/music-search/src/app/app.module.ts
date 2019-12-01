@@ -14,13 +14,15 @@ import { GetTracksComponent } from './get-tracks/get-tracks.component';
 import { MdcTextFieldModule, MdcButtonModule, MdcCardModule, MdcListModule, MdcDialogModule, MdcTypographyModule } from '@angular-mdc/web';
 
 import { LyricsDialogComponent } from './lyrics-dialog/lyrics-dialog.component';
+import { MoodDialogComponent } from './mood-dialog/mood-dialog.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     GetTracksComponent,
     LyricsDialogComponent,
-    GetAuthComponent
+    GetAuthComponent,
+    MoodDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +39,8 @@ import { LyricsDialogComponent } from './lyrics-dialog/lyrics-dialog.component';
     MdcTypographyModule,
   ],
   entryComponents: [
-    LyricsDialogComponent
+    LyricsDialogComponent,
+    MoodDialogComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

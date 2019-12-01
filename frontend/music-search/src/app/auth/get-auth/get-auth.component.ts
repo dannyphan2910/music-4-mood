@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { GetTracksService } from 'src/app/get-tracks.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-get-auth',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GetAuthComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private getTracksService: GetTracksService,
+    private router: Router
+  ) { }
 
   ngOnInit() {
+  }
+
+  getToken() {
+    this.getTracksService.getToken();
+    this.router.navigate(['/home']);
   }
 
 }

@@ -3,22 +3,26 @@
   <component name="ChangeListManager">
     <list default="true" id="3aed2dd2-5f42-4fe6-aca0-17d5b49c0669" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mod_track_mood/bean.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/mod_track_mood/bean.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mod_track_mood/parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/mod_track_mood/parser.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mod_track_mood/resources.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/mod_track_mood/resources.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mod_track_mood/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mod_track_mood/bean.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mod_track_mood/parser.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mod_track_mood/resources.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mod_track_mood/serializers.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/mod_track_search/bean.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/mod_track_search/bean.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mod_track_search/parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/mod_track_search/parser.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/mod_track_search/resources.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/mod_track_search/resources.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Track.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Track.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/TrackMood.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/TrackMood.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/run.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../frontend/music-search/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/music-search/src/app/app.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../frontend/music-search/src/app/auth/get-auth/get-auth.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/music-search/src/app/auth/get-auth/get-auth.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/music-search/src/app/auth/get-auth/get-auth.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/music-search/src/app/auth/get-auth/get-auth.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/music-search/src/app/auth/get-auth/get-auth.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/music-search/src/app/auth/get-auth/get-auth.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/music-search/src/app/get-tracks.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/music-search/src/app/get-tracks.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../frontend/music-search/src/app/get-tracks/get-tracks.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/music-search/src/app/get-tracks/get-tracks.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../frontend/music-search/src/app/get-tracks/get-tracks.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/music-search/src/app/get-tracks/get-tracks.component.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../frontend/music-search/src/app/get-tracks/get-tracks.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/music-search/src/app/get-tracks/get-tracks.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/music-search/src/app/get-tracks/test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/music-search/src/app/get-tracks/test.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../frontend/music-search/src/app/lyrics-dialog/lyrics-dialog.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/music-search/src/app/lyrics-dialog/lyrics-dialog.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/music-search/src/app/lyrics-dialog/lyrics-dialog.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/music-search/src/app/lyrics-dialog/lyrics-dialog.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/music-search/src/app/lyrics-dialog/lyrics-dialog.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/music-search/src/app/lyrics-dialog/lyrics-dialog.component.scss" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
