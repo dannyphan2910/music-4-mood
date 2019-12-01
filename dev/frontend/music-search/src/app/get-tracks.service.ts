@@ -13,7 +13,7 @@ export class GetTracksService {
   ) { }
 
   getTracks(lyrics: string) {
-    const url = 'http://0.0.0.0:4002/get_tracks/' + lyrics;
+    const url = 'https://music-4-mood.herokuapp.com/get_tracks/' + lyrics;
     console.log(lyrics);
     return this.http.get(url).pipe(
       catchError(this.handleError)
@@ -22,27 +22,27 @@ export class GetTracksService {
 
   getToken() {
     const params = ('grant_type=client_credentials');
-    const client_id = 'e443d660cb984da1aa88a1780cc5a5e1'; // Your client id
-    const client_secret = '35413573f7aa459295e818970ad2755d'; // Your secret
-    const encoded = btoa(client_id + ':' + client_secret);
-    const set_headers = {
+    const clientId = 'e443d660cb984da1aa88a1780cc5a5e1'; // Your client id
+    const clientSecret = '35413573f7aa459295e818970ad2755d'; // Your secret
+    const encoded = btoa(clientId + ':' + clientSecret);
+    const setHeaders = {
       'Authorization': 'Basic ' + encoded,
       'Content-Type': 'application/x-www-form-urlencoded'
     }
     const proxy = 'https://cors-anywhere.herokuapp.com/';
     const uurl = 'https://accounts.spotify.com/api/token';
 
-    return this.http.post(proxy + uurl, params, { headers: set_headers }).subscribe( data => {
+    return this.http.post(proxy + uurl, params, { headers: setHeaders }).subscribe(data => {
       const accessToken = 'access_token=' + data['access_token'];
       const refreshToken = 'refresh_token=' + data['refresh_token'];
-      const token = accessToken + '&' + refreshToken
+      const token = accessToken + '&' + refreshToken;
       console.log(token);
       this.setTokenBackend(token);
-    }); 
+    });
   }
 
   setTokenBackend(token) {
-    const url = 'http://0.0.0.0:4002/set_token';
+    const url = 'https://music-4-mood.herokuapp.com/set_token';
     const toSend = {
       'token': token
     };

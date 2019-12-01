@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask, send_from_directory
 from flask_cors import CORS, cross_origin
 from flask_restful import Resource, Api
 from json import dumps
@@ -12,9 +12,14 @@ api = Api(app)
 CORS(app)
 
 
+@app.route('/<path:path>', methods=['GET'])
+def static_proxy(path):
+    return send_from_directory('./', path)
+
+
 @app.route("/")
-def hello():
-    return 'API END-POINT'
+def root():
+    return "hello" #send_from_directory('./', 'index.html')
 
 
 api.add_resource(TrackList, '/get_tracks/<string:lyrics>')
