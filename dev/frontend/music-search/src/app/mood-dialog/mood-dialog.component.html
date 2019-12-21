@@ -3,10 +3,18 @@
         <mdc-dialog-surface>
             <mdc-dialog-title>Audio Features</mdc-dialog-title>
             <mdc-dialog-content>
+                <div class="music_info" id="show_mobile">
+                    <div>TITLE: {{ track.title }}</div>
+                    <div>
+                        ARTISTS: {{ track.artist.length >= 50 ? track.artist.substring(0, 50) + "..." : track.artist }}
+                    </div>
+                    <div *ngIf="track.genre">GENRE: {{ track.genre }}</div>
+                </div>
                 <div *ngIf="notAvailable; else elseTemplate">
                     <p>{{ mood }}</p>
                 </div>
                 <ng-template #elseTemplate>
+                    <p id="show_mobile"><b>{{ mood.analyzer.stress_counter }} && {{ mood.analyzer.energy_counter }}</b></p>
                     <p>BPM: {{ mood.bpm }}</p>
                     <p>KEY: {{ mood.key }}</p>
                     <p>VALENCE: {{ mood.valence }}</p>

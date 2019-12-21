@@ -16,6 +16,7 @@ export class GetTracksService {
     const url = 'https://music-4-mood.herokuapp.com/get_tracks/' + lyrics;
     console.log(lyrics);
     return this.http.get(url).pipe(
+      retry(3),
       catchError(this.handleError)
     );
   }

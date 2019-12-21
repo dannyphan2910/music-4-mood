@@ -1,4 +1,3 @@
-import { GetAuthComponent } from './auth/get-auth/get-auth.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -15,14 +14,17 @@ import { MdcTextFieldModule, MdcButtonModule, MdcCardModule, MdcListModule, MdcD
 
 import { LyricsDialogComponent } from './lyrics-dialog/lyrics-dialog.component';
 import { MoodDialogComponent } from './mood-dialog/mood-dialog.component';
+import { LoadingComponent } from './loading/loading.component';
+import { ScrollDownComponent } from './scroll-down/scroll-down.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     GetTracksComponent,
     LyricsDialogComponent,
-    GetAuthComponent,
-    MoodDialogComponent
+    MoodDialogComponent,
+    LoadingComponent,
+    ScrollDownComponent,
   ],
   imports: [
     BrowserModule,

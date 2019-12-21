@@ -16,6 +16,9 @@ export class GetTracksComponent implements OnInit {
 
   userInput: string = null;
 
+  isLoading = false;
+  isSuccess = false;
+
   tracks: any = [];
 
   constructor(
@@ -27,6 +30,7 @@ export class GetTracksComponent implements OnInit {
     this.searchForm = this.formBuilder.group({
       lyrics: '',
     });
+    this.getTracksService.getToken();
     // this.tracks = testData['data'];
   }
 
@@ -36,15 +40,24 @@ export class GetTracksComponent implements OnInit {
   onSubmit(formData) {
     const lyrics = JSON.stringify(formData['lyrics']);
     this.userInput = lyrics;
+    this.isSuccess = false;
+    this.isLoading = true;
+    this.resetTrack();
     this.getTracksService.getTracks(lyrics.substring(1, lyrics.length - 1)).subscribe((data) => {
-      console.log(data);
+      console.log('logged', data);
+      this.isLoading = false;
       this.tracks = data['data'];
+      this.resetForm();
+      this.isSuccess = true;
     });
-    this.searchForm.reset();
   }
 
-  reset() {
+  resetTrack() {
     this.tracks = [];
+  }
+
+  resetForm() {
+    this.searchForm.reset();
   }
 
   displayLyrics(track) {

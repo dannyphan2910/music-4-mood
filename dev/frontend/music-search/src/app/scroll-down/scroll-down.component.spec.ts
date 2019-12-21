@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { GetAuthComponent } from './get-auth.component';
+import { ScrollDownComponent } from './scroll-down.component';
 
-describe('GetAuthComponent', () => {
-  let component: GetAuthComponent;
-  let fixture: ComponentFixture<GetAuthComponent>;
+describe('ScrollDownComponent', () => {
+  let component: ScrollDownComponent;
+  let fixture: ComponentFixture<ScrollDownComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ GetAuthComponent ]
+      declarations: [ ScrollDownComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(GetAuthComponent);
+    fixture = TestBed.createComponent(ScrollDownComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
