@@ -23,8 +23,8 @@ export class GetTracksService {
 
   getToken() {
     const params = ('grant_type=client_credentials');
-    const clientId = 'e443d660cb984da1aa88a1780cc5a5e1'; // Your client id
-    const clientSecret = '35413573f7aa459295e818970ad2755d'; // Your secret
+    const clientId = 'CLIENT_ID'; // Your client id
+    const clientSecret = 'CLIENT_SECRET'; // Your secret
     const encoded = btoa(clientId + ':' + clientSecret);
     const setHeaders = {
       'Authorization': 'Basic ' + encoded,
