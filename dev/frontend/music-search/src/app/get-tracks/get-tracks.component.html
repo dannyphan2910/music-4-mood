@@ -1,12 +1,18 @@
 <div class="container">
   <div class="main_container">
-    <div class="music_text_container">
-      <div class="music_text"></div>
+    <div class="music_text_container" id="hide_mobile">
+      <div class="music_text">
+        <span>Music is the shorthand of emotion ― Leo Tolstoy</span>
+        <span>Music touches us emotionally, where words alone can’t ― Johnny Depp</span>
+        <span>I see my life in terms of music ― Albert Einstein</span>
+        <span>Music can change the world because it can change people ― Bono</span>
+      </div>
     </div>
     <div class="get_input">
       <div class="mid">
         <div class="inner">
-          <div mdcHeadline5 class="title">Enter any words for some song suggestions...</div>
+          <div mdcHeadline5 class="title">Hello{{ (name !== '')? ' ' + name : '' }}. Enter any words for some song
+            suggestions...</div>
           <form [formGroup]="searchForm" (ngSubmit)="onSubmit(searchForm.value)">
             <mdc-form-field fluid class="input">
               <mdc-text-field formControlName="lyrics" outlined class="lyrics_input"></mdc-text-field>
@@ -20,6 +26,11 @@
         </div>
       </div>
     </div>
+
+    <div class="btn_filter">
+      <app-btn-filter (click)="displayMoodFilter()"></app-btn-filter>
+    </div>
+    
     <div class="loading" *ngIf="isLoading">
       <app-loading></app-loading>
     </div>

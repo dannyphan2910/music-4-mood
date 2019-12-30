@@ -8,8 +8,15 @@ from flask_restful import Resource
 
 class TrackList(Resource):
 
-    def get(self, lyrics):
-        tracks = get_tracks(lyrics)
+    def get(self):
+        args = get_track_parser.parse_args(request)
+        print('get_tracks args', args)
+        lyrics = args.get('lyrics', '')
+        stress = args.get('stress', '')
+        energy = args.get('energy', '')
+        limit = args.get('limit', 25)
+
+        tracks = get_tracks(lyrics, stress, energy, limit)
         return tracks
 
 

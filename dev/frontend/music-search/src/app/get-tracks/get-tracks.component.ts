@@ -1,9 +1,10 @@
+import { FilterDialogComponent } from './../filter-dialog/filter-dialog.component';
 import { testData } from './test';
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { GetTracksService } from '../get-tracks.service';
 import { LyricsDialogComponent } from '../lyrics-dialog/lyrics-dialog.component';
-import { MdcDialog } from '@angular-mdc/web';
+import { MdcDialog, MdcDialogRef } from '@angular-mdc/web';
 import { MoodDialogComponent } from '../mood-dialog/mood-dialog.component';
 
 @Component({
@@ -12,7 +13,9 @@ import { MoodDialogComponent } from '../mood-dialog/mood-dialog.component';
   styleUrls: ['./get-tracks.component.scss']
 })
 export class GetTracksComponent implements OnInit {
-  searchForm;
+  searchForm: FormGroup;
+
+  name: string = '';
 
   userInput: string = null;
 
@@ -35,6 +38,7 @@ export class GetTracksComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.displayMoodFilter();
   }
 
   onSubmit(formData) {
@@ -64,7 +68,7 @@ export class GetTracksComponent implements OnInit {
     const data = (track.lyrics == null || track.lyrics.body === '') ? 'Sorry, the lyrics is not available...' : track.lyrics;
     console.log('Lyrics for ' + track.title, data);
 
-    const dialogRef = this.dialogLyrics.open(LyricsDialogComponent, {
+    this.dialogLyrics.open(LyricsDialogComponent, {
       clickOutsideToClose: true,
       escapeToClose: true,
       data: {
@@ -79,7 +83,7 @@ export class GetTracksComponent implements OnInit {
       const data = track.mood;
       console.log('Audio features for ' + track.mood, data);
 
-      const dialogRef = this.dialogAudio.open(MoodDialogComponent, {
+      this.dialogAudio.open(MoodDialogComponent, {
         clickOutsideToClose: true,
         escapeToClose: true,
         data: {
@@ -90,4 +94,30 @@ export class GetTracksComponent implements OnInit {
     }
   }
 
+  displayMoodFilter() {
+    this.dialogAudio.open(FilterDialogComponent, {
+      clickOutsideToClose: false,
+      escapeToClose: true,
+      data: {'ask_name': this.name === ''},
+    }).afterClosed().subscribe(result => {
+      console.log(result);
+      if (result !== 'close') {
+        if (result['name'] !== '') {
+          this.name = result['name'];
+        }
+        if (result['lyrics'] !== '') {
+          this.isSuccess = false;
+          this.isLoading = true;
+          this.resetTrack();
+          this.getTracksService.getTracks(result['lyrics'], result['stress'], result['energy']).subscribe((data) => {
+            console.log('logged', data);
+            this.isLoading = false;
+            this.tracks = data['data'];
+            this.resetForm();
+            this.isSuccess = true;
+          });
+        }
+      }
+    });
+  }
 }

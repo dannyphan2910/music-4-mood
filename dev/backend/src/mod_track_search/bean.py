@@ -1,6 +1,7 @@
 import json
 import requests
 
+from mod_analyze_mood.Mood import Mood
 from mod_analyze_mood.mood_analyzer import analyzer
 from model.Track import Track, TrackMood
 import urllib
@@ -16,7 +17,7 @@ def set_access_token(token):
     response = ({}, 404)
 
     global access_token
-    if token is not None and token is not '':
+    if token is not None and token != '':
         access_token = token
 
     print(access_token)
@@ -31,17 +32,37 @@ def set_access_token(token):
     return response
 
 
-def get_tracks(lyrics=''):
+def get_tracks(lyrics='', stress='', energy='', limit=25):
+    print('call get_tracks', lyrics, stress, energy, limit)
     response = ({}, 404)
 
-    if lyrics is None:
+    if lyrics is None or lyrics == '':
+        print('invalid lyrics')
+        response = ({}, 400)
+
+    elif stress is None or (stress != '' and stress != Mood.HAPPY.describe() and stress != Mood.SAD.describe()) or energy is None or (energy != '' and energy != Mood.ENERGETIC.describe() and energy != Mood.CALM.describe()):
+        print('invalid mood filters')
         response = ({}, 400)
 
     else:
         tracks = __get_track_list(__track_search_api(lyrics))
         tracks_json = []
+
+        counter = limit
         for track in tracks:
+            if counter == 0:
+                break
+
+            track_stress = track.mood.analyzer.stress_counter
+            if stress != '' and track_stress != stress:
+                continue
+
+            track_energy = track.mood.analyzer.energy_counter
+            if energy != '' and track_energy != energy:
+                continue
+
             tracks_json.append(track.get())
+            counter -= 1
 
         data = {
             'data': tracks_json
@@ -56,7 +77,7 @@ def get_tracks(lyrics=''):
 
 def __track_search_api(lyrics):
     search_track_base_url = 'https://api.spotify.com/v1/search?'
-    search_track_url = search_track_base_url + 'q=track:' + urllib.parse.quote(lyrics) + '&type=track&offset=0&limit=25&' + access_token
+    search_track_url = search_track_base_url + 'q=track:' + urllib.parse.quote(lyrics) + '&type=track&offset=0&limit=40&' + access_token
 
     print(search_track_url)
 
@@ -123,10 +144,10 @@ def get_mood_for_track(track, id):
 
 
 def get_mood(track_id):
-    if access_token is None or access_token is '':
+    if access_token is None or access_token == '':
         return None
 
-    if track_id is None or track_id is '':
+    if track_id is None or track_id == '':
         return None
 
     get_analysis_base_url = 'https://api.spotify.com/v1/audio-features/'

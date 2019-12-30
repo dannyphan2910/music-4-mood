@@ -1,8 +1,6 @@
 from flask import Flask, send_from_directory
-from flask_cors import CORS, cross_origin
-from flask_restful import Resource, Api
-from json import dumps
-from flask_jsonpify import jsonify
+from flask_cors import CORS
+from flask_restful import Api
 
 from mod_track_search.resources import *
 
@@ -19,10 +17,10 @@ def static_proxy(path):
 
 @app.route("/")
 def root():
-    return "hello" #send_from_directory('./', 'index.html')
+    return send_from_directory('./', 'index.html')
 
 
-api.add_resource(TrackList, '/get_tracks/<string:lyrics>')
+api.add_resource(TrackList, '/get_tracks', endpoint='get_tracks')
 api.add_resource(Token, '/set_token')
 
 if __name__ == '__main__':

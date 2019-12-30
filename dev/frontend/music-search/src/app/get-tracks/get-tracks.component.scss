@@ -4,22 +4,32 @@
   background-color: #fbfbfb;
   height: 100vh;
   width: 100vw;
-  text-align: center;
-  position: relative;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   .music_text_container {
     height: 40%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     .music_text {
-      margin: 0 auto 10% auto;
-      padding: 10% 10% 0 10%;
+      // margin: 0 auto 10% auto;
+      // padding: 10% 10% 0 10%;
+      width: 80%;
       font-family: "Poppins", sans-serif;
       font-weight: 500;
       letter-spacing: 0.15em;
       font-size: 200%;
       color: #f41f4e;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
   }
-
 
   .get_input {
     margin: 0 auto;
@@ -30,8 +40,8 @@
           text-align: center;
           font-family: "Poppins", sans-serif;
           color: rgb(214, 52, 66);
-          font-weight: 400;
-          margin-bottom: 10px;
+          font-weight: 500;
+          margin: 0 10px 10px 10px;
         }
 
         .input {
@@ -61,6 +71,7 @@
   }
 
   .success {
+    height: 50px;
     margin: 0 auto;
     position: absolute;
     bottom: 100px;
@@ -146,30 +157,40 @@
   }
 }
 
-.music_text:after {
-  content: "";
-  animation: head 100s linear infinite;
-  -o-animation: head 100s linear infinite;
-  -moz-animation: head 100s linear infinite;
-  -webkit-animation: head 100s linear infinite;
+.music_text span {
+  position: absolute;
+  display: inline-block;
+  overflow: hidden;
+  
+  opacity: 0;
+
+  animation: head 40s infinite linear;
+  -o-animation: head 40s infinite linear;
+  -moz-animation: head 40s infinite linear;
+  -webkit-animation: head 40s infinite linear;
+
+  $spans: 4;
+  @for $i from 2 through $spans {
+      &:nth-of-type(#{$i}) {
+          animation-delay: 10*(-1s+$i);
+          -o-animation-delay: 10*(-1s+$i);
+          -moz-animation-delay: 10*(-1s+$i);
+          -webkit-animation-delay: 10*(-1s+$i);
+      }
+  }
 }
 
 @keyframes head {
-  0% {
-    content: "Music is the shorthand of emotion ― Leo Tolstoy";
-  }
-  30% {
-    content: "Music touches us emotionally, where words alone can’t ― Johnny Depp";
-  }
-  60% {
-    content: "I see my life in terms of music ― Albert Einstein";
-  }
-  100% {
-    content: "Music can change the world because it can change people ― Bono";
-  }
+  0%, 25% {opacity: 1} /* visible for 1s */
+  25.01%, 100% {opacity: 0} /* hidden for 4s */
 }
 
-@media only screen and (max-width: 1026px) {
+@-webkit-keyframes head {
+  0%, 25% {opacity: 1} /* visible for 1s */
+  25.01%, 100% {opacity: 0} /* hidden for 4s */
+}
+
+@media only screen and (max-height: 666px) {
   #hide_mobile {
     display: none;
   }

@@ -16,6 +16,8 @@ import { LyricsDialogComponent } from './lyrics-dialog/lyrics-dialog.component';
 import { MoodDialogComponent } from './mood-dialog/mood-dialog.component';
 import { LoadingComponent } from './loading/loading.component';
 import { ScrollDownComponent } from './scroll-down/scroll-down.component';
+import { FilterDialogComponent } from './filter-dialog/filter-dialog.component';
+import { BtnFilterComponent } from './btn-filter/btn-filter.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +27,8 @@ import { ScrollDownComponent } from './scroll-down/scroll-down.component';
     MoodDialogComponent,
     LoadingComponent,
     ScrollDownComponent,
+    FilterDialogComponent,
+    BtnFilterComponent,
   ],
   imports: [
     BrowserModule,
@@ -42,7 +46,8 @@ import { ScrollDownComponent } from './scroll-down/scroll-down.component';
   ],
   entryComponents: [
     LyricsDialogComponent,
-    MoodDialogComponent
+    MoodDialogComponent,
+    FilterDialogComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

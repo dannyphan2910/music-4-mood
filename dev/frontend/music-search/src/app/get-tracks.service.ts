@@ -12,11 +12,11 @@ export class GetTracksService {
     private http: HttpClient
   ) { }
 
-  getTracks(lyrics: string) {
-    const url = 'https://music-4-mood.herokuapp.com/get_tracks/' + lyrics;
+  getTracks(lyrics: string, stress: string = '', energy: string = '', limit: number = 25) {
+    const url = 'https://music-4-mood.herokuapp.com/get_tracks?lyrics=' + lyrics + '&stress=' + stress + '&energy=' + energy + '&limit=' + limit;
     console.log(lyrics);
     return this.http.get(url).pipe(
-      retry(3),
+      retry(5),
       catchError(this.handleError)
     );
   }

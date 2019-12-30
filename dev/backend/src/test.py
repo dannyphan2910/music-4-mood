@@ -1,12 +1,11 @@
 from mod_track_search.bean import *
 
-access_token_test = 'access_token=BQB85GhrzW08Sx7A3t2bjKJxCY_5DEIG0DM3ED1Dt47OJGEqZp_dkHhgPnZlb5TJMQlyIa20hrNpbTdI5N_KcutDosL21zILKEFATjM7kK58qnKOFTKld4D27J67bF51FWffYaDtzHXZb43shG_hZDyCnZTPVlDCU3MKIOdJ5r2_NdTIlmkyu6AfkSM&refresh_token=AQCiXrPfzDAhF2GeUX8tZGKqyEXDRis4PcOOLYPv36aBHUX9EECkZ9vJTT0Gs_jjlv21WfCF09dg6qnx7WQ6KcCAVpnHtcj0Hlg0PRQy_29YNDK_f3alRGGP3CNTMaV_vlw'
-
+access_token_test = ''
 set_access_token(access_token_test)
 
 lyrics = input("Enter lyrics: ")
 
-tracksList = get_tracks(lyrics)[0]
+tracksList = get_tracks(lyrics, 'happy', 'calm', 10)[0]
 
 
 
