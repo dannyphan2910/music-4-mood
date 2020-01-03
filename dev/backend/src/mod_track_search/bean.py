@@ -97,25 +97,41 @@ def __get_track_list(data_dict):
 
     track_list = data_dict['tracks']['items']
     for item in track_list:
-        title = item['name']
-        album = item['album']['name']
-
-        artist = ''
-        for this_artist in item['artists']:
-            artist += this_artist['name'] + ','
-        artist = artist[:len(artist)-1]
-
-        # 300 x 300
-        artwork = item['album']['images'][1]['url']
-        preview_url = item['preview_url']
-
-        track = Track(title=title, album=album, artist=artist, artwork=artwork, preview_url=preview_url)
-        get_mood_for_track(track=track, id=item['id'])
-        get_lyrics_genre(track)
-
-        tracks.append(track)
+        tracks.append(get_info(item))
 
     return tracks
+
+
+def get_info(item):
+    title = item['name']
+    album = item['album']['name']
+
+    artist = ''
+    for this_artist in item['artists']:
+        artist += this_artist['name'] + ','
+    artist = artist[:len(artist) - 1]
+
+    # 300 x 300
+    artwork = item['album']['images'][1]['url']
+    preview_url = item['preview_url']
+
+    track = Track(title=title, album=album, artist=artist, artwork=artwork, preview_url=preview_url)
+    get_mood_for_track(track=track, id=item['id'])
+    get_lyrics_genre(track)
+    return track
+
+
+def get_track_id(id):
+    print('token', access_token)
+    if access_token is None or access_token == '':
+        return None
+    else:
+        url = 'https://api.spotify.com/v1/tracks/' + id + '?' + access_token
+        request = requests.get(url)
+        track_dict = request.json()
+        print(track_dict)
+        track = get_info(track_dict)
+        return track
 
 
 def get_mood_for_track(track, id):

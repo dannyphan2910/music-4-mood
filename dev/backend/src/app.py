@@ -3,6 +3,7 @@ from flask_cors import CORS
 from flask_restful import Api
 
 from mod_track_search.resources import *
+from mod_audio_recognition.resources import *
 
 app = Flask(__name__)
 api = Api(app)
@@ -22,7 +23,8 @@ def root():
 
 api.add_resource(TrackList, '/get_tracks', endpoint='get_tracks')
 api.add_resource(Token, '/set_token')
+api.add_resource(Audio, '/get_tracks_audio')
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=4002, debug=True)
+    app.run(host='0.0.0.0', port=4004, debug=True)
 

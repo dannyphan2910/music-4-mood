@@ -1,48 +1,50 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { RouterModule } from '@angular/router';
-import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { GetTracksComponent } from './get-tracks/get-tracks.component';
 
-import { MdcTextFieldModule, MdcButtonModule, MdcCardModule, MdcListModule, MdcDialogModule, MdcTypographyModule } from '@angular-mdc/web';
+import { GetTracksLyricsModule } from './get-tracks-lyrics/get-tracks-lyrics.module';
+import { GetTracksAudioModule } from './get-tracks-audio/get-tracks-audio.module';
+import { GetTracksHomeModule } from './get-tracks-home/get-tracks-home.module';
 
-import { LyricsDialogComponent } from './lyrics-dialog/lyrics-dialog.component';
+import { MdcTextFieldModule, MdcButtonModule, MdcCardModule,
+  MdcListModule, MdcDialogModule, MdcTypographyModule, MdcTabBarModule, MdcIconModule } from '@angular-mdc/web';
+
 import { MoodDialogComponent } from './mood-dialog/mood-dialog.component';
-import { LoadingComponent } from './loading/loading.component';
-import { ScrollDownComponent } from './scroll-down/scroll-down.component';
-import { FilterDialogComponent } from './filter-dialog/filter-dialog.component';
-import { BtnFilterComponent } from './btn-filter/btn-filter.component';
+import { LyricsDialogComponent } from './lyrics-dialog/lyrics-dialog.component';
+import { FilterDialogComponent } from './get-tracks-lyrics/filter-dialog/filter-dialog.component';
+import { NavComponent } from './nav/nav.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    GetTracksComponent,
     LyricsDialogComponent,
     MoodDialogComponent,
-    LoadingComponent,
-    ScrollDownComponent,
-    FilterDialogComponent,
-    BtnFilterComponent,
+    NavComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     RouterModule,
-    ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
+
     MdcTextFieldModule,
     MdcButtonModule,
     MdcCardModule,
     MdcListModule,
     MdcDialogModule,
     MdcTypographyModule,
+    MdcTabBarModule,
+    MdcIconModule,
+
+    GetTracksAudioModule,
+    GetTracksLyricsModule,
+    GetTracksHomeModule
   ],
   entryComponents: [
     LyricsDialogComponent,

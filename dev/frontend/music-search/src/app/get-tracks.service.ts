@@ -1,22 +1,24 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnDestroy } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { Observable, throwError } from 'rxjs';
+import { throwError, interval, Subscription } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class GetTracksService {
+  base_url = 'https://music-4-mood.herokuapp.com/';
+  subscription: Subscription;
 
   constructor(
     private http: HttpClient
   ) { }
 
   getTracks(lyrics: string, stress: string = '', energy: string = '', limit: number = 25) {
-    const url = 'https://music-4-mood.herokuapp.com/get_tracks?lyrics=' + lyrics + '&stress=' + stress + '&energy=' + energy + '&limit=' + limit;
+    const url = this.base_url + 'get_tracks?lyrics=' + lyrics + '&stress=' + stress + '&energy=' + energy + '&limit=' + limit;
     console.log(lyrics);
     return this.http.get(url).pipe(
-      retry(5),
+      retry(3),
       catchError(this.handleError)
     );
   }
@@ -35,19 +37,32 @@ export class GetTracksService {
 
     return this.http.post(proxy + uurl, params, { headers: setHeaders }).subscribe(data => {
       const accessToken = 'access_token=' + data['access_token'];
-      const refreshToken = 'refresh_token=' + data['refresh_token'];
-      const token = accessToken + '&' + refreshToken;
+      const token = accessToken;
       console.log(token);
       this.setTokenBackend(token);
     });
   }
 
   setTokenBackend(token) {
-    const url = 'https://music-4-mood.herokuapp.com/set_token';
+    const url = this.base_url + 'set_token';
     const toSend = {
       'token': token
     };
     return this.http.post(url, toSend).subscribe(result => console.log(result));
+  }
+
+  getTracksByAudio(file) {
+    const url = this.base_url + 'get_tracks_audio';
+
+    const formData = new FormData();
+    formData.append('file', file, file.name);
+
+    console.log(formData);
+
+    return this.http.post(url, formData).pipe(
+      retry(3),
+      catchError(this.handleError)
+    );
   }
 
   private handleError(error: HttpErrorResponse) {

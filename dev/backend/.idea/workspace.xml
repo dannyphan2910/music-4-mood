@@ -1,8 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3aed2dd2-5f42-4fe6-aca0-17d5b49c0669" name="Default Changelist" comment="" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <list default="true" id="3aed2dd2-5f42-4fe6-aca0-17d5b49c0669" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/acrcloud/linux/acrcloud_extr_tool.so" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/mod_audio_recognition/resources.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mod_track_search/bean.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/mod_track_search/bean.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mod_track_search/serializers.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/music-search/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/music-search/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/music-search/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/music-search/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/music-search/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/music-search/src/app/app-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/music-search/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/music-search/src/app/app.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/music-search/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/music-search/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/music-search/src/app/get-tracks.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/music-search/src/app/get-tracks.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/music-search/src/app/get-tracks/get-tracks.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/music-search/src/app/get-tracks/get-tracks.component.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/music-search/src/app/get-tracks/get-tracks.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/music-search/src/app/get-tracks/get-tracks.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/music-search/src/app/get-tracks/test.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/music-search/src/app/loading/loading.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/music-search/src/app/loading/loading.component.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/music-search/src/app/loading/loading.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/music-search/src/app/loading/loading.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/music-search/src/app/scroll-down/scroll-down.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/music-search/src/app/scroll-down/scroll-down.component.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/music-search/src/app/scroll-down/scroll-down.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/music-search/src/app/scroll-down/scroll-down.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/music-search/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/music-search/src/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/music-search/src/polyfills.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/music-search/src/polyfills.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/music-search/src/styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/music-search/src/styles.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/music-search/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/music-search/tsconfig.json" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,27 +52,29 @@
   </component>
   <component name="ProjectId" id="1Ri1nz0BqyivU2uGHfXbOFoIZcn" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/mod_audio_recognition/acrcloud_sdk_python-master/mac/x86-64/python3" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/mod_audio_recognition/acrcloud_sdk_python-master/mac/x86-64/python3" />
+      <recent name="$PROJECT_DIR$/src/mod_audio_recognition" />
       <recent name="$PROJECT_DIR$/src/mod_track_mood" />
     </key>
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/acrcloud/linux" />
+      <recent name="$PROJECT_DIR$/src/acrcloud" />
+      <recent name="$PROJECT_DIR$/src" />
+      <recent name="$PROJECT_DIR$/src/mod_audio_recognition" />
+    </key>
   </component>
   <component name="RunManager" selected="Python.app">
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
@@ -71,6 +105,9 @@
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
         <env name="API_KEY" value="3c203b7201bc61cdcede0d796853503b" />
+        <env name="ACCESS_KEY" value="&#9;85ed88f7134d395b6f3bf3202a1d074e" />
+        <env name="ACCESS_SECRET" value="eDs9nizmWj0in7sdm9dCPDI2DAL4NeQe0fTtrFGx" />
+        <env name="LD_LIBRARY_PATH" value="src/acrcloud/acrcloud_extr_tool.so" />
       </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src" />
@@ -113,6 +150,18 @@
       <item itemvalue="Python.test" />
     </list>
   </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -138,5 +187,60 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/.." />
+    </ignored-roots>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="304" y="187" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1578068364805">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="304" y="187" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1578068364805" />
+    <state x="304" y="194" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1680.961@0.23.1680.961" timestamp="1577985778825" />
+    <state x="519" y="335" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1578061654983">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="519" y="335" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1680.1050@0.0.1680.1050" timestamp="1578061654983" />
+    <state x="594" y="297" key="EnvironmentVariablesDialog" timestamp="1578068363873">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="594" y="297" key="EnvironmentVariablesDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1578068363873" />
+    <state width="1680" height="911" key="GridCell.Tab.0.bottom" timestamp="1578064434017">
+      <screen x="0" y="23" width="1680" height="965" />
+    </state>
+    <state width="1680" height="911" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1578062879627" />
+    <state width="1680" height="1022" key="GridCell.Tab.0.bottom/0.23.1680.960@0.23.1680.960" timestamp="1578018655936" />
+    <state width="1680" height="1022" key="GridCell.Tab.0.bottom/0.23.1680.961@0.23.1680.961" timestamp="1577990111495" />
+    <state width="1680" height="911" key="GridCell.Tab.0.bottom/0.23.1680.965@0.23.1680.965" timestamp="1578064434017" />
+    <state width="1680" height="911" key="GridCell.Tab.0.center" timestamp="1578064434017">
+      <screen x="0" y="23" width="1680" height="965" />
+    </state>
+    <state width="1680" height="911" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1578062879626" />
+    <state width="1680" height="1022" key="GridCell.Tab.0.center/0.23.1680.960@0.23.1680.960" timestamp="1578018655935" />
+    <state width="1680" height="1022" key="GridCell.Tab.0.center/0.23.1680.961@0.23.1680.961" timestamp="1577990111494" />
+    <state width="1680" height="911" key="GridCell.Tab.0.center/0.23.1680.965@0.23.1680.965" timestamp="1578064434017" />
+    <state width="1680" height="911" key="GridCell.Tab.0.left" timestamp="1578064434016">
+      <screen x="0" y="23" width="1680" height="965" />
+    </state>
+    <state width="1680" height="911" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1578062879625" />
+    <state width="1680" height="1022" key="GridCell.Tab.0.left/0.23.1680.961@0.23.1680.961" timestamp="1577990111492" />
+    <state width="1680" height="911" key="GridCell.Tab.0.left/0.23.1680.965@0.23.1680.965" timestamp="1578064434016" />
+    <state width="1680" height="911" key="GridCell.Tab.0.right" timestamp="1578064434017">
+      <screen x="0" y="23" width="1680" height="965" />
+    </state>
+    <state width="1680" height="911" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1578062879627" />
+    <state width="1680" height="1022" key="GridCell.Tab.0.right/0.23.1680.960@0.23.1680.960" timestamp="1578018655936" />
+    <state width="1680" height="1022" key="GridCell.Tab.0.right/0.23.1680.961@0.23.1680.961" timestamp="1577990111494" />
+    <state width="1680" height="911" key="GridCell.Tab.0.right/0.23.1680.965@0.23.1680.965" timestamp="1578064434017" />
+    <state x="341" y="164" key="SettingsEditor" timestamp="1578062181826">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="341" y="164" key="SettingsEditor/0.0.1680.1050@0.0.1680.1050" timestamp="1578062181826" />
+    <state x="623" y="449" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1578059343901">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="623" y="449" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1680.1050@0.0.1680.1050" timestamp="1578059343901" />
   </component>
 </project>
