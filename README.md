@@ -10,4 +10,5 @@ for live version of the web application, visit: https://music-4-mood.herokuapp.c
 
 this is a project i worked hard on, and have had the chance to strengthen my web development skills, which I aim to improve even more through more projects and work opportunities. future improvements include: even better UI (i aim to create a simple and calming user interface), and better mood prediction algorithm.
 
+**UPDATE: Added a feature where users can curate the tracks based on their mood (either HAPPY or SAD and either ENERGETIC or CALM, and it's ok not to know because they can still choose to get all the suitable tracks!)
 
